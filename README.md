@@ -8,7 +8,7 @@
 
 ## 订阅地址
 
-[https://raw.githubusercontent.com/xbf321/iCal/master/dist/holidays.ics](https://raw.githubusercontent.com/xbf321/iCal/master/dist/holidays.ics)
+[https://raw.githubusercontent.com/norcm/iCal/master/dist/holidays.ics](https://raw.githubusercontent.com/norcm/iCal/master/dist/holidays.ics)
 
 ## 如何运行
 
