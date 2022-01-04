@@ -1,3 +1,4 @@
+[![Node.js CI](https://github.com/norcm/iCal/actions/workflows/node.js.yml/badge.svg?branch=master&event=push)](https://github.com/norcm/iCal/actions/workflows/node.js.yml)
 # 国家法定假日(iCal 格式)
 
 已有的法定假日大部分不维护，索性自己写个。
