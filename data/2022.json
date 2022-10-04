@@ -115,6 +115,11 @@
     "SUMMARY": "🏝国庆节(休)"
   },
   {
+    "DTSTART;VALUE=DATE": "20221007",
+    "DTEND;VALUE=DATE": "20221008",
+    "SUMMARY": "🏝国庆节(休)"
+  },
+  {
     "DTSTART;VALUE=DATE": "20221008",
     "DTEND;VALUE=DATE": "20221009",
     "SUMMARY": "🚨国庆节(班)"
