@@ -21,13 +21,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build --if-present
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Rebuild the dist/ directory
+        run: yarn run build
+
       - name: update file and push to remote
         run: |
           git config --global user.name "github-actions[bot]"
