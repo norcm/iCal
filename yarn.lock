@@ -71,10 +71,10 @@ jsonfile@^4.0.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
-lunar-typescript@1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/lunar-typescript/-/lunar-typescript-1.6.2.tgz#9ca833983d05d62a000817a83e959d96e7858f47"
-  integrity sha512-oGDF/rF+Ime8NQtnfZ7MM2T6oP5yJOyzG4GoMXpgJFFqP6+s/9t+oBS/R9F79h23H0/DyDCpTlrfEtG31CxLcg==
+lunar-typescript@^1.6.2:
+  version "1.6.7"
+  resolved "https://registry.yarnpkg.com/lunar-typescript/-/lunar-typescript-1.6.7.tgz#36366a012566de10c19a75912c84bf08e66789bc"
+  integrity sha512-+a1E5OGgxjg1ZZFsXGhyvQKT2WvQxwHddk+9w6Y9uAZkW79DGjwOTLT4Qqy/K29zw+Z5/kxO7ZLFvbC8BQMjNQ==
 
 minimatch@^3.0.4:
   version "3.0.4"
