@@ -1,5 +1,9 @@
 [![Node.js CI](https://github.com/norcm/iCal/actions/workflows/node.js.yml/badge.svg?branch=master&event=push)](https://github.com/norcm/iCal/actions/workflows/node.js.yml)
 
+包含除法定节假日外的节日
+
+法定节日订阅: [https://calendars.icloud.com/holidays/cn_zh.ics](https://calendars.icloud.com/holidays/cn_zh.ics)
+
 ## 订阅地址
 
 [https://raw.githubusercontent.com/norcm/iCal/master/dist/holidays.ics](https://raw.githubusercontent.com/norcm/iCal/master/dist/holidays.ics)
