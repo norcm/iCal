@@ -1,4 +1,4 @@
-[![Node.js CI](https://github.com/norcm/iCal/actions/workflows/node.js.yml/badge.svg?branch=master&event=push)](https://github.com/norcm/iCal/actions/workflows/node.js.yml)
+[![Node.js CI](https://github.com/norcm/iCal/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/norcm/iCal/actions/workflows/node.js.yml)
 
 包含除法定节假日外的节日
 
