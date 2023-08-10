@@ -18,7 +18,7 @@ function loadEvents() {
             const year = currentDay.getFullYear();
             const month = currentDay.getMonth() + 1;
             const date = currentDay.getDate();
-            let event = buildEvent(festival, `${year}-${month < 10 ? `0${month}` : month}-${date}`);
+            let event = buildEvent(festival, `${year}-${month < 10 ? `0${month}` : month}-${date < 10 ? `0${date}` : date}`);
             events.push(...event)
         }
         currentDay = nextDate(currentDay);
