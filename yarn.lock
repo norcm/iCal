@@ -71,6 +71,11 @@ jsonfile@^4.0.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+lunar-typescript@1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/lunar-typescript/-/lunar-typescript-1.6.2.tgz#9ca833983d05d62a000817a83e959d96e7858f47"
+  integrity sha512-oGDF/rF+Ime8NQtnfZ7MM2T6oP5yJOyzG4GoMXpgJFFqP6+s/9t+oBS/R9F79h23H0/DyDCpTlrfEtG31CxLcg==
+
 minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npmjs.org/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
