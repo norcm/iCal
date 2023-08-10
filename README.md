@@ -6,12 +6,12 @@
 
 ## 订阅地址
 
-GitHub: [https://raw.githubusercontent.com/norcm/iCal/main/dist/holidays.ics](https://raw.githubusercontent.com/norcm/iCal/main/dist/holidays.ics)
-
-CDN: [https://cdn.jsdelivr.net/gh/norcm/iCal@main/dist/holidays.ics](https://cdn.jsdelivr.net/gh/norcm/iCal@main/dist/holidays.ics)
-
-GHProxy: [https://ghproxy.com/https://raw.githubusercontent.com/norcm/iCal/main/dist/holidays.ics](https://ghproxy.com/https://raw.githubusercontent.com/norcm/iCal/main/dist/holidays.ics)
-
+| 类型           | Github                                                       | CDN                                                          | GHProxy                                                      |
+| -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 农历节假日     | https://raw.githubusercontent.com/norcm/iCal/main/dist/lunar.ics | https://cdn.jsdelivr.net/gh/norcm/iCal@main/dist/lunar.ics   | https://ghproxy.com/https://raw.githubusercontent.com/norcm/iCal/main/dist/lunar.ics |
+| 农历其他节假日 | https://raw.githubusercontent.com/norcm/iCal/main/dist/lunar_other.ics | https://cdn.jsdelivr.net/gh/norcm/iCal@main/dist/lunar_other.ics | https://ghproxy.com/https://raw.githubusercontent.com/norcm/iCal/main/dist/lunar_other.ics |
+| 通用节假日     | https://raw.githubusercontent.com/norcm/iCal/main/dist/common.ics | https://cdn.jsdelivr.net/gh/norcm/iCal@main/dist/common.ics  | https://ghproxy.com/https://raw.githubusercontent.com/norcm/iCal/main/dist/common.ics |
+| 通用其他节假日 | https://raw.githubusercontent.com/norcm/iCal/main/dist/common_other.ics | https://cdn.jsdelivr.net/gh/norcm/iCal@main/dist/common_other.ics | https://ghproxy.com/https://raw.githubusercontent.com/norcm/iCal/main/dist/common_other.ics |
 
 ## 如何运行
 

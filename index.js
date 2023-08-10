@@ -1,11 +1,39 @@
 const fs = require('fs-extra');
 const path = require('path');
-const glob = require('glob');
-const {Solar, SolarMonth, HolidayUtil} = require('lunar-typescript');
+const {Solar} = require('lunar-typescript');
 
-const filename = path.join(__dirname, 'dist', 'holidays.ics');
+const types = [
+    {
+        type: "lunar",
+        desc: "农历节假日"
+    },
+    {
+        type: "lunar_other",
+        desc: "农历其他节假日"
+    },
+    {
+        type: "common",
+        desc: "通用节假日"
+    },
+    {
+        type: "common_other",
+        desc: "通用其他节假日"
+    },
+]
 
-function loadEvents() {
+function build(type) {
+    let nodes = ['BEGIN:VCALENDAR'];
+    nodes.push('VERSION:2.0');
+    nodes.push(`X-WR-CALNAME:${type.desc}`);
+    nodes.push('X-WR-CALDESC:');
+    nodes.push('X-APPLE-CALENDAR-COLOR:#65db39FF');
+    nodes = nodes.concat(loadEvents(type.type));
+    nodes.push('END:VCALENDAR');
+    const content = nodes.join('\n');
+    fs.outputFile(filename(type.type), content);
+}
+
+function loadEvents(type) {
     let events = [];
     const now = new Date();
     const start = new Date(now);
@@ -14,7 +42,7 @@ function loadEvents() {
     end.setFullYear(now.getFullYear() + 3, 0, 1);
     let currentDay = start;
     while (currentDay.getTime() <= end.getTime()) {
-        let festival = getFestival(Solar.fromDate(currentDay));
+        let festival = getFestival(Solar.fromDate(currentDay), type);
         if (festival && festival.length > 0) {
             const year = currentDay.getFullYear();
             const month = currentDay.getMonth() + 1;
@@ -28,23 +56,23 @@ function loadEvents() {
 }
 
 
-function getFestival(d) {
+function getFestival(d, type) {
     const lunar = d.getLunar()
     let festival = ''
     let otherFestivals = d.getOtherFestivals()
-    if (otherFestivals.length > 0) {
+    if (type === 'common_other' && otherFestivals.length > 0) {
         festival = otherFestivals[0]
     }
     otherFestivals = lunar.getOtherFestivals()
-    if (otherFestivals.length > 0) {
+    if (type === 'lunar_other' && otherFestivals.length > 0) {
         festival = otherFestivals[0]
     }
     let festivals = d.getFestivals()
-    if (festivals.length > 0) {
+    if (type === 'common' && festivals.length > 0) {
         festival = festivals[0]
     }
     festivals = lunar.getFestivals()
-    if (festivals.length > 0) {
+    if (type === 'lunar' && festivals.length > 0) {
         festival = festivals[0]
     }
     return festival
@@ -68,22 +96,11 @@ function nextDate(day) {
     return nextDay;
 }
 
-
-// 输出文件
-function build(file) {
-    let nodes = ['BEGIN:VCALENDAR'];
-    nodes.push('VERSION:2.0');
-    nodes.push('X-WR-CALNAME:节假日');
-    nodes.push('X-WR-CALDESC:');
-    nodes.push('X-APPLE-CALENDAR-COLOR:#65db39FF');
-    // 追加 event
-    const events = loadEvents();
-    nodes = nodes.concat(events);
-
-    nodes.push('END:VCALENDAR');
-
-    const content = nodes.join('\n');
-    fs.outputFile(file, content);
+function filename(name) {
+    return path.join(__dirname, 'dist', name + '.ics');
 }
 
-build(filename);
+
+for (let type of types) {
+    build(type);
+}
