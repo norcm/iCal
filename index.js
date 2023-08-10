@@ -7,10 +7,11 @@ const filename = path.join(__dirname, 'dist', 'holidays.ics');
 
 function loadEvents() {
     let events = [];
-    const start = new Date("2020-01-01");
-    // const start = new Date("2023-07-30");
-    const end = new Date();
-    end.setFullYear(end.getFullYear() + 3, 1, 1);
+    const now = new Date();
+    const start = new Date(now);
+    const end = new Date(now);
+    start.setFullYear(now.getFullYear() - 3, 0, 1);
+    end.setFullYear(now.getFullYear() + 3, 0, 1);
     let currentDay = start;
     while (currentDay.getTime() <= end.getTime()) {
         let festival = getFestival(Solar.fromDate(currentDay));
