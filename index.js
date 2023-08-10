@@ -2,35 +2,39 @@ const fs = require('fs-extra');
 const path = require('path');
 const {Solar} = require('lunar-typescript');
 
-const types = [
+const calenders = [
     {
         type: "lunar",
-        desc: "农历节假日"
+        desc: "农历节假日",
+        color: "#C339DBFF"
     },
     {
         type: "lunar_other",
-        desc: "农历其他节假日"
+        desc: "农历其他节假日",
+        color: "#A821A5FF"
     },
     {
         type: "common",
-        desc: "通用节假日"
+        desc: "通用节假日",
+        color: "#741F83FF"
     },
     {
         type: "common_other",
-        desc: "通用其他节假日"
+        desc: "通用其他节假日",
+        color: "#5F156CFF"
     },
 ]
 
-function build(type) {
+function build(calender) {
     let nodes = ['BEGIN:VCALENDAR'];
     nodes.push('VERSION:2.0');
-    nodes.push(`X-WR-CALNAME:${type.desc}`);
+    nodes.push(`X-WR-CALNAME:${calender.desc}`);
     nodes.push('X-WR-CALDESC:');
-    nodes.push('X-APPLE-CALENDAR-COLOR:#65db39FF');
-    nodes = nodes.concat(loadEvents(type.type));
+    nodes.push(`X-APPLE-CALENDAR-COLOR:${calender.color}`);
+    nodes = nodes.concat(loadEvents(calender.type));
     nodes.push('END:VCALENDAR');
     const content = nodes.join('\n');
-    fs.outputFile(filename(type.type), content);
+    fs.outputFile(filename(calender.type), content);
 }
 
 function loadEvents(type) {
@@ -101,6 +105,6 @@ function filename(name) {
 }
 
 
-for (let type of types) {
-    build(type);
+for (let calender of calenders) {
+    build(calender);
 }
