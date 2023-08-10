@@ -8,6 +8,7 @@ const filename = path.join(__dirname, 'dist', 'holidays.ics');
 function loadEvents() {
     let events = [];
     const start = new Date("2020-01-01");
+    // const start = new Date("2023-07-30");
     const end = new Date();
     end.setFullYear(end.getFullYear() + 3, 1, 1);
     let currentDay = start;
