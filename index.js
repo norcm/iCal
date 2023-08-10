@@ -15,7 +15,10 @@ function loadEvents() {
     while (currentDay.getTime() <= end.getTime()) {
         let festival = getFestival(Solar.fromDate(currentDay));
         if (festival && festival.length > 0) {
-            let event = buildEvent(festival, `${currentDay.getFullYear()}-${currentDay.getMonth() + 1}-${currentDay.getDate()}`);
+            const year = currentDay.getFullYear();
+            const month = currentDay.getMonth() + 1;
+            const date = currentDay.getDate();
+            let event = buildEvent(festival, `${year}-${month < 10 ? `0${month}` : month}-${date}`);
             events.push(...event)
         }
         currentDay = nextDate(currentDay);

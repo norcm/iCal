@@ -10,6 +10,9 @@ GitHub: [https://raw.githubusercontent.com/norcm/iCal/master/dist/holidays.ics](
 
 CDN: [https://cdn.jsdelivr.net/gh/norcm/iCal@master/dist/holidays.ics](https://cdn.jsdelivr.net/gh/norcm/iCal@master/dist/holidays.ics)
 
+GHProxy: [https://ghproxy.com/https://raw.githubusercontent.com/norcm/iCal/master/dist/holidays.ics](https://ghproxy.com/https://raw.githubusercontent.com/norcm/iCal/master/dist/holidays.ics)
+
+
 ## 如何运行
 
 ```js
