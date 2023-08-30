@@ -59,7 +59,6 @@ function loadEvents(type) {
     return events;
 }
 
-
 function getFestival(d, type) {
     const lunar = d.getLunar()
     let festival = ''

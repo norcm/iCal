@@ -11,6 +11,6 @@
   "dependencies": {
     "fs-extra": "^7.0.0",
     "glob": "^7.1.2",
-    "lunar-typescript": "^1.6.2"
+    "lunar-typescript": "latest"
   }
 }
