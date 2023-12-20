@@ -63,25 +63,24 @@ function loadEvents(type) {
 }
 
 function getFestival(d, type) {
-    const lunar = d.getLunar()
-    let festival = ''
-    let otherFestivals = d.getOtherFestivals()
-    if (type === 'common_other' && otherFestivals.length > 0) {
-        festival = otherFestivals[0]
+    let festivals = d.getOtherFestivals()
+    if (type === 'common_other' && festivals.length > 0) {
+        return festivals[0]
     }
-    otherFestivals = lunar.getOtherFestivals()
-    if (type === 'lunar_other' && otherFestivals.length > 0) {
-        festival = otherFestivals[0]
-    }
-    let festivals = d.getFestivals()
+    festivals = d.getFestivals()
     if (type === 'common' && festivals.length > 0) {
-        festival = festivals[0]
+        return festivals[0]
+    }
+    const lunar = d.getLunar()
+    festivals = lunar.getOtherFestivals()
+    if (type === 'lunar_other' && festivals.length > 0) {
+        return festivals[0]
     }
     festivals = lunar.getFestivals()
     if (type === 'lunar' && festivals.length > 0) {
-        festival = festivals[0]
+        return festivals[0]
     }
-    return festival
+    return ''
 }
 
 
