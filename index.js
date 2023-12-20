@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const {Solar} = require('lunar-typescript');
+const request = require('sync-request');
 
 const calenders = [
     {
@@ -25,6 +26,8 @@ const calenders = [
     },
 ]
 
+const officialHolidayCalender = request('GET', 'https://calendars.icloud.com/holidays/cn_zh.ics').getBody('utf8');
+
 function build(calender) {
     let nodes = ['BEGIN:VCALENDAR'];
     nodes.push('VERSION:2.0');
@@ -47,7 +50,7 @@ function loadEvents(type) {
     let currentDay = start;
     while (currentDay.getTime() <= end.getTime()) {
         let festival = getFestival(Solar.fromDate(currentDay), type);
-        if (festival && festival.length > 0) {
+        if (festival && festival.length > 0 && officialHolidayCalender.indexOf(festival) < 0) {
             const year = currentDay.getFullYear();
             const month = currentDay.getMonth() + 1;
             const date = currentDay.getDate();
@@ -102,7 +105,6 @@ function nextDate(day) {
 function filename(name) {
     return path.join(__dirname, 'dist', name + '.ics');
 }
-
 
 for (let calender of calenders) {
     build(calender);
