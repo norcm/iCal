@@ -50,7 +50,7 @@ function loadEvents(type) {
     let currentDay = start;
     while (currentDay.getTime() <= end.getTime()) {
         let festival = getFestival(Solar.fromDate(currentDay), type);
-        if (festival && festival.length > 0 && officialHolidayCalender.indexOf(festival) < 0) {
+        if (festival && festival.length > 0 && officialNotContain(festival)) {
             const year = currentDay.getFullYear();
             const month = currentDay.getMonth() + 1;
             const date = currentDay.getDate();
@@ -94,6 +94,11 @@ function buildEvent(summary, day) {
     event.push('SEQUENCE:0');
     event.push('END:VEVENT');
     return event;
+}
+
+function officialNotContain(festival) {
+    const additionalFestival = festival.indexOf('节') > 0 ? festival.replace('节', '') : (festival + '节');
+    return officialHolidayCalender.indexOf(festival) < 0 && officialHolidayCalender.indexOf(additionalFestival) < 0;
 }
 
 function nextDate(day) {
