@@ -6,22 +6,22 @@ const request = require('sync-request');
 const calenders = [
     {
         type: "lunar",
-        desc: "农历节假日",
+        desc: "农历节日",
         color: "#C339DBFF"
     },
     {
         type: "lunar_other",
-        desc: "农历其他节假日",
+        desc: "农历其他节日",
         color: "#A821A5FF"
     },
     {
         type: "common",
-        desc: "通用节假日",
+        desc: "通用节日",
         color: "#741F83FF"
     },
     {
         type: "common_other",
-        desc: "通用其他节假日",
+        desc: "通用其他节日",
         color: "#5F156CFF"
     },
 ]
